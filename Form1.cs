@@ -90,6 +90,7 @@ namespace FinHelper
             while (temp2 > 0)
             {
                 temp1 = temp1 * temp1;
+                temp2 -= 1;
             }
            
             futureMoney = currentMoney * temp1;
