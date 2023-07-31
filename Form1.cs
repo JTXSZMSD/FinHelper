@@ -82,22 +82,38 @@ namespace FinHelper
 
         private void CalculateInvestitions()
         {
-            double temp1;
-            temp1 = (1 + percent / 12);
+            int tempTime = time;
 
-            int temp2 = 12 * time;
+            double futureMoney = currentMoney;
+            double tempPercent = percent / (12);
+            
 
-            while (temp2 > 0)
+            if (tempTime <= 2400 && tempTime > 0 && tempPercent > 0)
             {
-                temp1 = temp1 * temp1;
-                temp2 -= 1;
+                while(tempTime > 0) 
+                {
+                    futureMoney += futureMoney * tempPercent;
+                    tempTime -= 1;
+                }
+
+                String FutureMoney = futureMoney.ToString();
+                FutureMoneyTextBox.Text = FutureMoney;
             }
-           
-            futureMoney = currentMoney * temp1;
-            String FutureMoney = futureMoney.ToString();
-            FutureMoneyTextBox.Text = FutureMoney;
+
+
+            //double temp1;
+            //temp1 = (1 + percent / 12);
+
+            //int temp2 = 12 * time;
+
+            //while (temp2 > 0)
+            //{
+            //    temp1 = temp1 * temp1;
+            //    temp2 -= 1;
+            //}
+
         }
 
-        
+
     }
 }

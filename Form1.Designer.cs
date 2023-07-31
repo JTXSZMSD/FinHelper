@@ -100,9 +100,9 @@
             label3.Font = new Font("Bernard MT Condensed", 16F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(12, 219);
             label3.Name = "label3";
-            label3.Size = new Size(222, 26);
+            label3.Size = new Size(399, 26);
             label3.TabIndex = 3;
-            label3.Text = "Срок вклада (месяц)";
+            label3.Text = "Срок вклада (месяца, максимум 2400)";
             // 
             // PercentTextBox
             // 
