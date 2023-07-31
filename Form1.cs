@@ -20,6 +20,8 @@ namespace FinHelper
 
         }
 
+
+        //Правило ввода только цифр в поля
         private void CurrentMoneyTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
@@ -56,30 +58,62 @@ namespace FinHelper
             }
         }
 
+
+        //Обработчик введенных данных
         private void CurrentMoneyTextBox_TextChanged(object sender, EventArgs e)
         {
-            currentMoney = Convert.ToDouble(CurrentMoneyTextBox.Text);
-            CalculateInvestitions();
+            try
+            {
+                currentMoney = Convert.ToDouble(CurrentMoneyTextBox.Text);
+                CalculateInvestitions();
+            }
+            catch 
+            { 
+                
+            }
         }
 
         private void TimeTextBox_TextChanged(object sender, EventArgs e)
         {
-            time = Convert.ToInt32(TimeTextBox.Text);
-            CalculateInvestitions();
+            try
+            {
+                time = Convert.ToInt32(TimeTextBox.Text);
+                CalculateInvestitions();
+            }
+            catch  
+            { 
+                
+            }
         }
 
         private void PercentTextBox_TextChanged(object sender, EventArgs e)
         {
-            percent = Convert.ToDouble(PercentTextBox.Text) / 100;
-            CalculateInvestitions();
+            try
+            {
+                percent = Convert.ToDouble(PercentTextBox.Text) / 100;
+                CalculateInvestitions();
+            }
+            catch
+            {
+
+            }
         }
 
         private void InflationTextBox_TextChanged(object sender, EventArgs e)
         {
-            inflation = Convert.ToDouble(InflationTextBox.Text) / 100;
-            CalculateInvestitions();
+            try
+            {
+                inflation = Convert.ToDouble(InflationTextBox.Text) / 100;
+                CalculateInvestitions();
+            }
+            catch
+            { 
+                
+            }
         }
 
+
+        //функция рассчёта итоговой суммы
         private void CalculateInvestitions()
         {
             int tempTime = time;
@@ -99,18 +133,6 @@ namespace FinHelper
                 String FutureMoney = futureMoney.ToString();
                 FutureMoneyTextBox.Text = FutureMoney;
             }
-
-
-            //double temp1;
-            //temp1 = (1 + percent / 12);
-
-            //int temp2 = 12 * time;
-
-            //while (temp2 > 0)
-            //{
-            //    temp1 = temp1 * temp1;
-            //    temp2 -= 1;
-            //}
 
         }
 
